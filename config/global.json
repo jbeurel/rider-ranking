@@ -1,11 +1,11 @@
 {
     "applications": {
         "_default": {
-            "link": "angular-parse-boilerplate"
+            "link": "ranking-rider"
         }, 
-        "angular-parse-boilerplate": {
-            "applicationId": "N2xyMRbsrFcBuzq7TXLwieDGM9FzwODEY44LLFOP",
-            "masterKey": "8QSCge7dswIvZJbVEWlnpAIjxROaykclkABTtuqw"
+        "ranking-rider": {
+            "applicationId": "f30zOn77dmpVbIk0O0mQccHSxGLA499vyIbgkpnq",
+            "masterKey": "yR6KwdrOX2ITivQv1x7hvo5lSOnRtxwex3mgAaO7"
         }
     }, 
     "global": {

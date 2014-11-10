@@ -16,16 +16,16 @@ app.config (
 ) ->
 
   $stateProvider
-  .state 'task',
+  .state 'homepage',
     url: '/:locale'
-    controller: 'TaskCtrl'
-    templateUrl: 'task.html'
+    controller: 'RankingCtrl'
+    templateUrl: 'ranking.html'
 
   $urlRouterProvider.otherwise '/fr'
 
   ParseProvider.initialize(
-    "N2xyMRbsrFcBuzq7TXLwieDGM9FzwODEY44LLFOP",
-    "zTAHO7HKWvbV1awq5wQlexRc368lOQtSbmycOi0O"
+    "f30zOn77dmpVbIk0O0mQccHSxGLA499vyIbgkpnq",
+    "JoaIvIhGQdvlT9ma5OiRV8GmUQo7BGhXjiC4YrEP"
   )
 
 app.run ($rootScope, $state) ->
