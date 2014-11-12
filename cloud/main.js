@@ -5,12 +5,12 @@ Parse.Cloud.beforeSave("Rider", function(request, response) {
     ig.searchUser({
         q: request.object.get("username"),
         count: '1'
-    }).then(function (httpResponse) {
-        riderData = httpResponse.data.data[0]
-        request.object.set("name", riderData.full_name);
-        request.object.set("instagramId", riderData.id);
-        request.object.set("profilePicture", riderData.profile_picture);
-        request.object.set("data", riderData);
-        response.success();
+    }).then(function (searchResponse) {
+        console.log('coucou1');
+        ig.getUser(searchResponse.data.data[0].id).then(function (userResponse) {
+            console.log('coucou2');
+            request.object.set("data", userResponse.data);
+            response.success();
+        });
     });
 });

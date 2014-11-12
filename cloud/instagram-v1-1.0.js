@@ -20,6 +20,7 @@
     var _accessToken = '';
 
     function wrappedHttpRequest(url, params, authenticateRequest) {
+        params = typeof params !== 'undefined' ? params : {};
         authenticateRequest = authenticateRequest || false;
         if (authenticateRequest) {
             params.access_token = _accessToken;
