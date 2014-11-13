@@ -19,7 +19,9 @@ app.run(function($rootScope, $state) {
 
 app.controller('RankingCtrl', function($scope, Rider) {
   $scope.fetchRiders = function() {
-    return Rider.query().then(function(riders) {
+    return Rider.query({
+      order: '-followers'
+    }).then(function(riders) {
       return $scope.riders = riders;
     });
   };
