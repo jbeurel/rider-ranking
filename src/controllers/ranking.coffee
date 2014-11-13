@@ -1,7 +1,9 @@
 app.controller 'RankingCtrl', ($scope, Rider) ->
 
   $scope.fetchRiders = ->
-    Rider.query()
+    Rider.query(
+      order: '-followers'
+    )
     .then (riders) ->
       $scope.riders = riders
 
