@@ -6163,3 +6163,7 @@ button.close {
     display: none !important;
   }
 }
+.bigfont {
+  font-size: 60px;
+  text-align: center;
+}
