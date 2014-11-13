@@ -4,13 +4,13 @@ table.table
 
   thead
     tr
-      th Classement
+      th Rank
       th Profile
       th Bio
       th Followers
   tbody
     tr(ng-repeat="rider in riders")
-      td {{ $index + 1 }}
+      td.bigfont {{ $index + 1 }}
       td
         img.img-rounded(src="{{ rider.profilePicture }}")
       td
@@ -20,4 +20,4 @@ table.table
         p {{ rider.bio }}
         p
           a(ng-href="{{ rider.website }}") {{ rider.website }}
-      td {{ rider.followers }}
+      td.bigfont {{ rider.followers | numeraljs:'0,0' }}

@@ -7,6 +7,7 @@ app = angular.module 'angularParseBoilerplate', [
   'ui.bootstrap'
   'app.templates'
   'Parse'
+  'ngNumeraljs'
 ]
 
 app.config (

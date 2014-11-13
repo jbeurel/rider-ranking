@@ -11,7 +11,9 @@ gulp.task 'vendor', (done) ->
     'bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js'
     'bower_components/angular-ui-bootstrap-bower/ui-bootstrap-tpls.min.js'
     'bower_components/angular-parse/angular-parse.js'
+    'bower_components/angular-numeraljs/dist/angular-numeraljs.js'
     'bower_components/moment/moment.js'
+    'bower_components/numeral/numeral.js'
     'bower_components/lodash/dist/lodash.js'
   ]
   .pipe(concat('vendor.js'))

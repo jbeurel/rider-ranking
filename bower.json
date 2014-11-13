@@ -13,6 +13,7 @@
     "placeholders": "3.0.x",
     "lodash": "~2.4.1",
     "parse-angular-patch": "*",
-    "angular-parse": "*"
+    "angular-parse": "*",
+    "angular-numeraljs": "~1.1.6"
   }
 }
