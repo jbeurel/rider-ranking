@@ -1,7 +1,5 @@
-AngularJS GitHub Pages
-======================
-
-[Demo :-)](http://jbeurel.github.io/angular-github-pages)
+Rider Ranking [ ![Codeship Status for jbeurel/rider-ranking](https://codeship.com/projects/353a5570-49bb-0132-890d-62ad83b9cfff/status?branch=master)](https://codeship.com/projects/46165)
+==============
 
 # Technologies
 
