@@ -8,6 +8,13 @@ html(lang="en", ng-app="angularParseBoilerplate")
     link(rel="stylesheet", href="css/app.css")
 
   body
+    nav.navbar.navbar-default(role="navigation")
+      .container
+        .navbar-header
+          a.navbar-brand(href="http://karmabmx.com")
+            img(alt="Karmabmx", src="img/K.jpg", height=25)
+            |  Karmabmx.com
+
     main.container(ui-view)
 
     script(src="js/vendor.js")

@@ -1,4 +1,4 @@
-app.controller 'RankingCtrl', ($scope, Rider) ->
+app.controller 'RankingCtrl', ($scope, Rider, Proposal) ->
 
   $scope.fetchRiders = ->
     Rider.query(
@@ -9,10 +9,12 @@ app.controller 'RankingCtrl', ($scope, Rider) ->
 
   $scope.fetchRiders()
 
-#  $scope.addTask = ->
-#    $scope.newTask.save().then (task) ->
-#      $scope.fetchTasks()
-#    $scope.newTask = new Task
+  $scope.newProposal = new Proposal
+
+  $scope.addProposal = ->
+    $scope.newProposal.save().then () ->
+      $scope.newProposal = new Proposal
+
 #
 #  $scope.removeTask = (task) ->
 #    task.destroy().then () ->

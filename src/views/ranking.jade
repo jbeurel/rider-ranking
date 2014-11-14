@@ -1,4 +1,13 @@
-h1 Most Popular Riders on Instagram !
+.page-header
+  h1 Most Popular Riders on Instagram !
+
+.row
+  .col-md-6.col-md-offset-3.well
+    form(role="form", ng-submit="addProposal()")
+      .input-group
+        input.form-control(type="text", ng-model="newProposal.username", placeholder="@harrymain" autofocus)
+        span.input-group-btn
+          button.btn.btn-default(type="submit") Propose a new Instagram account !
 
 table.table
 
