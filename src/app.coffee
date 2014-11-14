@@ -18,11 +18,11 @@ app.config (
 
   $stateProvider
   .state 'homepage',
-    url: '/:locale'
+    url: '/'
     controller: 'RankingCtrl'
     templateUrl: 'ranking.html'
 
-  $urlRouterProvider.otherwise '/fr'
+  $urlRouterProvider.otherwise '/'
 
   ParseProvider.initialize(
     "f30zOn77dmpVbIk0O0mQccHSxGLA499vyIbgkpnq",
