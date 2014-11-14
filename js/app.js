@@ -5,11 +5,11 @@ app = angular.module('angularParseBoilerplate', ['ng', 'ngResource', 'ui.router'
 
 app.config(function($stateProvider, $urlRouterProvider, ParseProvider) {
   $stateProvider.state('homepage', {
-    url: '/:locale',
+    url: '/',
     controller: 'RankingCtrl',
     templateUrl: 'ranking.html'
   });
-  $urlRouterProvider.otherwise('/fr');
+  $urlRouterProvider.otherwise('/');
   return ParseProvider.initialize("f30zOn77dmpVbIk0O0mQccHSxGLA499vyIbgkpnq", "JoaIvIhGQdvlT9ma5OiRV8GmUQo7BGhXjiC4YrEP");
 });
 
