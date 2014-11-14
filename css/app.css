@@ -6167,3 +6167,11 @@ button.close {
   font-size: 60px;
   text-align: center;
 }
+.navbar-default {
+  background-color: #4EA3D0;
+  border-bottom-color: #4EA3D0;
+}
+.navbar-default .navbar-brand,
+.navbar-default .navbar-brand:hover {
+  color: white;
+}

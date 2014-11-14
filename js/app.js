@@ -17,7 +17,7 @@ app.run(function($rootScope, $state) {
   return $rootScope.$state = $state;
 });
 
-app.controller('RankingCtrl', function($scope, Rider) {
+app.controller('RankingCtrl', function($scope, Rider, Proposal) {
   $scope.fetchRiders = function() {
     return Rider.query({
       order: '-followers'
@@ -25,7 +25,32 @@ app.controller('RankingCtrl', function($scope, Rider) {
       return $scope.riders = riders;
     });
   };
-  return $scope.fetchRiders();
+  $scope.fetchRiders();
+  $scope.newProposal = new Proposal;
+  return $scope.addProposal = function() {
+    return $scope.newProposal.save().then(function() {
+      return $scope.newProposal = new Proposal;
+    });
+  };
+});
+
+var __hasProp = {}.hasOwnProperty,
+  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+
+app.factory('Proposal', function(Parse) {
+  var Rider;
+  return Rider = (function(_super) {
+    __extends(Rider, _super);
+
+    function Rider() {
+      return Rider.__super__.constructor.apply(this, arguments);
+    }
+
+    Rider.configure("Proposal", "username");
+
+    return Rider;
+
+  })(Parse.Model);
 });
 
 var __hasProp = {}.hasOwnProperty,
