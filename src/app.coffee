@@ -8,6 +8,8 @@ app = angular.module 'angularParseBoilerplate', [
   'app.templates'
   'Parse'
   'ngNumeraljs'
+  'angulartics'
+  'angulartics.google.analytics'
 ]
 
 app.config (
