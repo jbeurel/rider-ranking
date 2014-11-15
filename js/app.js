@@ -1,7 +1,7 @@
 'use strict';
 var app;
 
-app = angular.module('angularParseBoilerplate', ['ng', 'ngResource', 'ui.router', 'ui.bootstrap', 'app.templates', 'Parse', 'ngNumeraljs']);
+app = angular.module('angularParseBoilerplate', ['ng', 'ngResource', 'ui.router', 'ui.bootstrap', 'app.templates', 'Parse', 'ngNumeraljs', 'angulartics', 'angulartics.google.analytics']);
 
 app.config(function($stateProvider, $urlRouterProvider, ParseProvider) {
   $stateProvider.state('homepage', {
