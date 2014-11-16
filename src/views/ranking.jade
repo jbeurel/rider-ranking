@@ -1,5 +1,10 @@
 .page-header
-  h1 Most Popular Riders on Instagram !
+  .row
+    .col-md-8
+      h1
+        | Most Popular Riders on Instagram !
+    .col-md-4
+      .addthis_sharing_toolbox(style="padding-top:25px")
 
 .row
   .col-md-6.col-md-offset-3.well
@@ -7,7 +12,7 @@
       .input-group
         input.form-control(type="text", ng-model="newProposal.username", placeholder="@harrymain" autofocus)
         span.input-group-btn
-          button.btn.btn-default(type="submit") Propose a new Instagram account !
+          button.btn.btn-primary(type="submit") Propose a new Instagram account !
 
 table.table
 
