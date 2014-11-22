@@ -29,7 +29,10 @@
         }
         return Parse.Cloud.httpRequest({
             url: url,
-            params: params
+            params: params,
+            error: function(httpResponse) {
+                console.error('Request (' + url + ')failed with response code ' + httpResponse.status);
+            }
         });
     }
 
