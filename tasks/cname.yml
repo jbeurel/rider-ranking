@@ -1,0 +1,4 @@
+src: src/CNAME
+dest: dist
+
+cache: false
