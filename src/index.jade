@@ -1,5 +1,5 @@
 doctype html
-html(lang="en", ng-app="angularParseBoilerplate")
+html(lang="en", ng-app="angularParseBoilerplate", prefix="og: http://ogp.me/ns#")
   head
     title 50 Most Popular BMX Riders on Instagram
     meta(charset="utf-8")
@@ -12,6 +12,13 @@ html(lang="en", ng-app="angularParseBoilerplate")
     meta(name="twitter:title", content="The 50 most popular #bmx riders on Instagram via @karmabmx")
     meta(name="twitter:description", content="Find the most popular riders on Instagram")
     meta(name="twitter:image:src", content="http://riders.karmabmx.com/img/riders.png")
+
+    meta(property="og:title", content="The 50 most popular BMX riders on Instagram")
+    meta(property="og:url", content="http://riders.karmabmx.com")
+    meta(property="og:type", content="website")
+    meta(property="og:description", content="Find the most popular riders on Instagram")
+    meta(property="og:image", content="http://riders.karmabmx.com/img/riders.png")
+    meta(property="og:image:type", content="image/png")
 
     link(rel="stylesheet", href="css/app.css")
 
