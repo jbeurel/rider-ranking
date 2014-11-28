@@ -1,4 +1,4 @@
-app.controller 'RankingCtrl', ($scope, Rider, Proposal) ->
+app.controller 'RidersCtrl', ($scope, Rider, Proposal) ->
 
   $scope.fetchRiders = ->
     Rider.query(

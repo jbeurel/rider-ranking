@@ -22,10 +22,10 @@ app.config (
   $locationProvider.html5Mode true
 
   $stateProvider
-  .state 'homepage',
+  .state 'riders',
     url: '/'
-    controller: 'RankingCtrl'
-    templateUrl: 'ranking.html'
+    controller: 'RidersCtrl'
+    templateUrl: 'riders.html'
 
   $urlRouterProvider.otherwise '/'
 
