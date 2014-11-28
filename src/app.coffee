@@ -13,10 +13,13 @@ app = angular.module 'angularParseBoilerplate', [
 ]
 
 app.config (
+  $locationProvider
   $stateProvider
   $urlRouterProvider
   ParseProvider
 ) ->
+
+  $locationProvider.html5Mode true
 
   $stateProvider
   .state 'homepage',
