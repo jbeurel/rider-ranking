@@ -5,10 +5,10 @@ app = angular.module('angularParseBoilerplate', ['ng', 'ngResource', 'ui.router'
 
 app.config(function($locationProvider, $stateProvider, $urlRouterProvider, ParseProvider) {
   $locationProvider.html5Mode(true);
-  $stateProvider.state('homepage', {
+  $stateProvider.state('riders', {
     url: '/',
-    controller: 'RankingCtrl',
-    templateUrl: 'ranking.html'
+    controller: 'RidersCtrl',
+    templateUrl: 'riders.html'
   });
   $urlRouterProvider.otherwise('/');
   return ParseProvider.initialize("f30zOn77dmpVbIk0O0mQccHSxGLA499vyIbgkpnq", "JoaIvIhGQdvlT9ma5OiRV8GmUQo7BGhXjiC4YrEP");
@@ -18,7 +18,7 @@ app.run(function($rootScope, $state) {
   return $rootScope.$state = $state;
 });
 
-app.controller('RankingCtrl', function($scope, Rider, Proposal) {
+app.controller('RidersCtrl', function($scope, Rider, Proposal) {
   $scope.fetchRiders = function() {
     return Rider.query({
       order: '-followers'
