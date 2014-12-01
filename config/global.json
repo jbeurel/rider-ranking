@@ -6,6 +6,10 @@
         "ranking-rider": {
             "applicationId": "f30zOn77dmpVbIk0O0mQccHSxGLA499vyIbgkpnq",
             "masterKey": "yR6KwdrOX2ITivQv1x7hvo5lSOnRtxwex3mgAaO7"
+        },
+        "rider-ranking-dev": {
+            "applicationId": "3IJVtcL7m5whPkj4Qi9tHTcNlTqDztQRFcKouSkh",
+            "masterKey": "BitrVlF3czu9Z5ifO9EImSvxo0ezlVkhhdSrvik3"
         }
     }, 
     "global": {
