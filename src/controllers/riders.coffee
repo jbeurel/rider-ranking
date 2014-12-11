@@ -1,9 +1,7 @@
 app.controller 'RidersCtrl', ($scope, Rider, Proposal) ->
 
   $scope.fetchRiders = ->
-    Rider.query(
-      order: '-followers'
-    )
+    Rider.getRiders()
     .then (riders) ->
       $scope.riders = riders
 

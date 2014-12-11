@@ -12,7 +12,6 @@
     "moment": "2.6.x",
     "placeholders": "3.0.x",
     "lodash": "~2.4.1",
-    "parse-angular-patch": "*",
     "angular-parse": "*",
     "angular-numeraljs": "~1.1.6",
     "angulartics": "~0.17.1"
