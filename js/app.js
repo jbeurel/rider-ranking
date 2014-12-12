@@ -19,14 +19,12 @@ app.run(function($rootScope, $state) {
 });
 
 app.controller('RidersCtrl', function($scope, Rider, Proposal) {
-  $scope.fetchRiders = function() {
-    return Rider.query({
-      order: '-followers'
-    }).then(function(riders) {
-      return $scope.riders = riders;
-    });
-  };
-  $scope.fetchRiders();
+  Rider.getRiders().then(function(riders) {
+    return $scope.riders = riders;
+  });
+  Rider.getCompanies().then(function(companies) {
+    return $scope.companies = companies;
+  });
   $scope.newProposal = new Proposal;
   return $scope.addProposal = function() {
     return $scope.newProposal.save().then(function() {
@@ -66,7 +64,25 @@ app.factory('Rider', function(Parse) {
       return Rider.__super__.constructor.apply(this, arguments);
     }
 
-    Rider.configure("Rider", "username", "id", "name");
+    Rider.configure("Rider", "username", "id", "name", "type");
+
+    Rider.getRiders = function() {
+      return this.query({
+        order: '-followers',
+        where: {
+          type: 'rider'
+        }
+      });
+    };
+
+    Rider.getCompanies = function() {
+      return this.query({
+        order: '-followers',
+        where: {
+          type: 'company'
+        }
+      });
+    };
 
     return Rider;
 
