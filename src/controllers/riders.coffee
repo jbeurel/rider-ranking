@@ -1,11 +1,12 @@
 app.controller 'RidersCtrl', ($scope, Rider, Proposal) ->
 
-  $scope.fetchRiders = ->
-    Rider.getRiders()
-    .then (riders) ->
-      $scope.riders = riders
+  Rider.getRiders()
+  .then (riders) ->
+    $scope.riders = riders
 
-  $scope.fetchRiders()
+  Rider.getCompanies()
+  .then (companies) ->
+      $scope.companies = companies
 
   $scope.newProposal = new Proposal
 

@@ -2,36 +2,76 @@
   .row
     .col-md-8
       h1
-        | Most Popular Riders on Instagram !
+        | BMX Lifestyles on Instagram !
     .col-md-4
       .addthis_sharing_toolbox(style="padding-top:25px")
 
-.row
-  .col-md-6.col-md-offset-3.well
-    form(role="form", ng-submit="addProposal()")
-      .input-group
-        input.form-control(type="text", ng-model="newProposal.username", placeholder="@harrymain" autofocus)
-        span.input-group-btn
-          button.btn.btn-primary(type="submit") Propose a new Instagram account !
+tabset(justified="true")
 
-table.table
+  tab
+    tab-heading
+      i.glyphicon.glyphicon-user
+      |  {{ riders.length }} Most Popular Riders on Instagram !
 
-  thead
-    tr
-      th Rank
-      th Profile
-      th Bio
-      th Followers
-  tbody
-    tr(ng-repeat="rider in riders")
-      td.bigfont {{ $index + 1 }}
-      td
-        img.img-rounded(src="{{ rider.profilePicture }}")
-      td
-        p
-          b {{ rider.name }}
-          a(ng-href="http://instagram.com/{{ rider.username }}")  @{{ rider.username }}
-        p {{ rider.bio }}
-        p
-          a(ng-href="{{ rider.website }}") {{ rider.website }}
-      td.bigfont {{ rider.followers | numeraljs:'0,0' }}
+    .row(style="margin-top: 20px")
+      .col-md-6.col-md-offset-3.well
+        form(role="form", ng-submit="addProposal()")
+          .input-group
+            input.form-control(type="text", ng-model="newProposal.username", placeholder="@harrymain" autofocus)
+            span.input-group-btn
+              button.btn.btn-primary(type="submit") Add rider account !
+
+    table.table
+      thead
+        tr
+          th Rank
+          th Profile
+          th Bio
+          th Followers
+      tbody
+        tr(ng-repeat="rider in riders")
+          td.bigfont {{ $index + 1 }}
+          td
+            img.img-rounded(src="{{ rider.profilePicture }}")
+          td
+            p
+              b {{ rider.name }}
+              a(ng-href="http://instagram.com/{{ rider.username }}")  @{{ rider.username }}
+            p {{ rider.bio }}
+            p
+              a(ng-href="{{ rider.website }}") {{ rider.website }}
+          td.bigfont {{ rider.followers | numeraljs:'0,0' }}
+
+  tab
+    tab-heading
+      i.glyphicon.glyphicon-home
+      |  {{ companies.length }} Most Popular Companies on Instagram
+
+    .row(style="margin-top: 20px")
+      .col-md-6.col-md-offset-3.well
+        form(role="form", ng-submit="addProposal()")
+          .input-group
+            input.form-control(type="text", ng-model="newProposal.username", placeholder="@bsdforever" autofocus)
+            span.input-group-btn
+              button.btn.btn-primary(type="submit") Add company account !
+
+    table.table
+      thead
+        tr
+          th Rank
+          th Profile
+          th Bio
+          th Followers
+      tbody
+        tr(ng-repeat="company in companies")
+          td.bigfont {{ $index + 1 }}
+          td
+            img.img-rounded(src="{{ company.profilePicture }}")
+          td
+            p
+              b {{ company.name }}
+              a(ng-href="http://instagram.com/{{ company.username }}")  @{{ company.username }}
+            p {{ company.bio }}
+            p
+              a(ng-href="{{ company.website }}") {{ company.website }}
+          td.bigfont {{ company.followers | numeraljs:'0,0' }}

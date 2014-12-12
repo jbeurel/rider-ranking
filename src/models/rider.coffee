@@ -9,7 +9,7 @@ app.factory 'Rider', (Parse) ->
           type: 'rider'
       )
 
-    @getCompanie: ->
+    @getCompanies: ->
       return this.query(
         order: '-followers'
         where:
