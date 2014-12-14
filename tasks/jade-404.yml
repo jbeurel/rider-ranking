@@ -1,0 +1,8 @@
+src: src/index.jade
+dest: dist/
+
+cache: true
+
+pipeline:
+  jade:
+  rename: 404.html

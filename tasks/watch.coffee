@@ -14,7 +14,7 @@ gulp.task 'watch', ->
   runSequence 'webserver', ->
     gulp.watch 'src/assets/**/*', ['assets']
     gulp.watch 'src/**/*.coffee', ['coffee']
-    gulp.watch 'src/index.jade', ['jade-index']
+    gulp.watch 'src/index.jade', ['jade-index', 'jade-404']
     gulp.watch 'src/**/*.jade', ['jade']
     gulp.watch 'src/styles/*.less', ['less']
     gulp.watch 'src/translations/*.yml', ['translations']
