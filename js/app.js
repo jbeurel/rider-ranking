@@ -5,12 +5,18 @@ app = angular.module('angularParseBoilerplate', ['ng', 'ngResource', 'ui.router'
 
 app.config(function($locationProvider, $stateProvider, $urlRouterProvider, ParseProvider) {
   $locationProvider.html5Mode(true);
-  $stateProvider.state('riders', {
-    url: '/',
+  $stateProvider.state('ranking', {
+    templateUrl: 'ranking.html'
+  }).state('ranking.riders', {
+    url: '/riders',
     controller: 'RidersCtrl',
     templateUrl: 'riders.html'
+  }).state('ranking.companies', {
+    url: '/companies',
+    controller: 'CompaniesCtrl',
+    templateUrl: 'companies.html'
   });
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/riders');
   return ParseProvider.initialize("f30zOn77dmpVbIk0O0mQccHSxGLA499vyIbgkpnq", "JoaIvIhGQdvlT9ma5OiRV8GmUQo7BGhXjiC4YrEP");
 });
 
@@ -18,12 +24,21 @@ app.run(function($rootScope, $state) {
   return $rootScope.$state = $state;
 });
 
+app.controller('CompaniesCtrl', function($scope, Rider, Proposal) {
+  Rider.getCompanies().then(function(companies) {
+    return $scope.companies = companies;
+  });
+  $scope.newProposal = new Proposal;
+  return $scope.addProposal = function() {
+    return $scope.newProposal.save().then(function() {
+      return $scope.newProposal = new Proposal;
+    });
+  };
+});
+
 app.controller('RidersCtrl', function($scope, Rider, Proposal) {
   Rider.getRiders().then(function(riders) {
     return $scope.riders = riders;
-  });
-  Rider.getCompanies().then(function(companies) {
-    return $scope.companies = companies;
   });
   $scope.newProposal = new Proposal;
   return $scope.addProposal = function() {
