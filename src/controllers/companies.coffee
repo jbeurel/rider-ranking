@@ -1,8 +1,8 @@
-app.controller 'RidersCtrl', ($scope, Rider, Proposal) ->
+app.controller 'CompaniesCtrl', ($scope, Rider, Proposal) ->
 
-  Rider.getRiders()
-  .then (riders) ->
-    $scope.riders = riders
+  Rider.getCompanies()
+  .then (companies) ->
+      $scope.companies = companies
 
   $scope.newProposal = new Proposal
 

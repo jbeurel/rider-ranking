@@ -1,0 +1,28 @@
+.row(style="margin-top: 20px")
+  .col-md-6.col-md-offset-3.well
+    form(role="form", ng-submit="addProposal()")
+      .input-group
+        input.form-control(type="text", ng-model="newProposal.username", placeholder="@bsdforever" autofocus)
+        span.input-group-btn
+          button.btn.btn-primary(type="submit") Add company account !
+
+table.table
+  thead
+    tr
+      th Rank
+      th Profile
+      th Bio
+      th Followers
+  tbody
+    tr(ng-repeat="company in companies")
+      td.bigfont {{ $index + 1 }}
+      td
+        img.img-rounded(src="{{ company.profilePicture }}")
+      td
+        p
+          b {{ company.name }}
+          a(ng-href="http://instagram.com/{{ company.username }}")  @{{ company.username }}
+        p {{ company.bio }}
+        p
+          a(ng-href="{{ company.website }}") {{ company.website }}
+      td.bigfont {{ company.followers | numeraljs:'0,0' }}

@@ -22,12 +22,18 @@ app.config (
   $locationProvider.html5Mode true
 
   $stateProvider
-  .state 'riders',
-    url: '/'
+  .state 'ranking',
+    templateUrl: 'ranking.html'
+  .state 'ranking.riders',
+    url: '/riders'
     controller: 'RidersCtrl'
     templateUrl: 'riders.html'
+  .state 'ranking.companies',
+    url: '/companies'
+    controller: 'CompaniesCtrl'
+    templateUrl: 'companies.html'
 
-  $urlRouterProvider.otherwise '/'
+  $urlRouterProvider.otherwise '/riders'
 
   ParseProvider.initialize(
     "f30zOn77dmpVbIk0O0mQccHSxGLA499vyIbgkpnq",

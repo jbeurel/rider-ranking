@@ -1,0 +1,19 @@
+div
+  .row
+    .col-md-8
+      h1
+        | BMX Lifestyles on Instagram !
+    .col-md-4
+      .addthis_sharing_toolbox(style="padding-top:25px")
+
+ul.nav.nav-tabs.nav-justified
+  li(ui-sref-active="active")
+    a(ui-sref="ranking.riders")
+      i.glyphicon.glyphicon-user
+      |  {{ riders.length }} Most Popular Riders on Instagram !
+  li(ui-sref-active="active")
+    a(ui-sref="ranking.companies")
+      i.glyphicon.glyphicon-home
+      |  {{ companies.length }} Most Popular Companies on Instagram
+
+div(ui-view)
