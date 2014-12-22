@@ -14,7 +14,8 @@
     "test": "karma start test/karma.coffee --single-run & webdriver-manager start & protractor --require coffee-script/register test/protractor.conf.coffee",
     "test:unit": "node_modules/.bin/karma start test/karma.coffee &",
     "test:functional": "webdriver-manager start &  protractor --require coffee-script/register test/protractor.conf.coffee",
-    "watch": "node_modules/.bin/gulp watch",
+    "watch-client": "node_modules/.bin/gulp watch",
+    "watch-server": "parse develop rider-ranking-dev",
     "deploy-client": "node_modules/.bin/gulp deploy",
     "deploy-server": "parse deploy",
     "deploy": "npm run deploy-server && npm run deploy-client"

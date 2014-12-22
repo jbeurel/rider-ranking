@@ -1,3 +1,5 @@
+require('cloud/app.js');
+
 var ig = require('cloud/instagram-v1-1.0.js');
 ig.initialize('ca2b7bf5c5b74211883ac9ae0f3d090e');
 
