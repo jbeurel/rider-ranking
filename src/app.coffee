@@ -36,8 +36,8 @@ app.config (
   $urlRouterProvider.otherwise '/riders'
 
   ParseProvider.initialize(
-    "f30zOn77dmpVbIk0O0mQccHSxGLA499vyIbgkpnq",
-    "JoaIvIhGQdvlT9ma5OiRV8GmUQo7BGhXjiC4YrEP"
+    "f30zOn77dmpVbIk0O0mQccHSxGLA499vyIbgkpnq", # Application ID
+    "JoaIvIhGQdvlT9ma5OiRV8GmUQo7BGhXjiC4YrEP"  # REST API Key
   )
 
 app.run ($rootScope, $state) ->
