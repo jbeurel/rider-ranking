@@ -4,7 +4,7 @@ var app;
 app = angular.module('angularParseBoilerplate', ['ng', 'ngResource', 'ui.router', 'ui.bootstrap', 'app.templates', 'Parse', 'ngNumeraljs', 'angulartics', 'angulartics.google.analytics']);
 
 app.config(function($locationProvider, $stateProvider, $urlRouterProvider, ParseProvider) {
-  $locationProvider.html5Mode(true);
+  $locationProvider.hashPrefix('!');
   $stateProvider.state('ranking', {
     templateUrl: 'ranking.html'
   }).state('ranking.riders', {
