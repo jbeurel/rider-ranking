@@ -14,6 +14,7 @@ gulp.task 'vendor', (done) ->
     'bower_components/angular-numeraljs/dist/angular-numeraljs.js'
     'bower_components/angulartics/src/angulartics.js'
     'bower_components/angulartics/src/angulartics-ga.js'
+    'bower_components/angular-sanitize/angular-sanitize.js'
     'bower_components/moment/moment.js'
     'bower_components/numeral/numeral.js'
     'bower_components/lodash/dist/lodash.js'

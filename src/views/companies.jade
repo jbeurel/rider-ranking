@@ -22,7 +22,7 @@ table.table
         p
           b {{ company.name }}
           a(ng-href="http://instagram.com/{{ company.username }}")  @{{ company.username }}
-        p {{ company.bio }}
+        p(ng-bind-html="company.bio | linky | instagram")
         p
           a(ng-href="{{ company.website }}") {{ company.website }}
       td.bigfont {{ company.followers | numeraljs:'0,0' }}

@@ -3,6 +3,7 @@
 app = angular.module 'angularParseBoilerplate', [
   'ng'
   'ngResource'
+  'ngSanitize'
   'ui.router'
   'ui.bootstrap'
   'app.templates'
