@@ -3,8 +3,8 @@ app.filter 'instagram', ($filter) ->
     addLink = (url, text) ->
       return '<a href="' + url + '">' + text + '</a>'
 
-    text = text.replace /@[^.]+?(?=\s|$)/g, (s) ->
-      addLink "http://instagram.com/" + s.replace("@", ""), s
+    text = text.replace /@[^.]+?(?=\s|$)/g, (username) ->
+      addLink "http://instagram.com/" + username.replace("@", ""), username
 
 
     return text

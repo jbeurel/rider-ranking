@@ -41,7 +41,7 @@ function updateRiderFields(rider, data) {
     rider.set("instagramId", data.id);
     rider.set("profilePicture", data.profile_picture);
     rider.set("name", data.full_name);
-    rider.set("bio", data.bio);
+    rider.set("bio", data.bio.replace(/(\r\n|\n|\r)/gm," "));
     rider.set("website", data.website);
     rider.set("followers", data.counts.followed_by);
     rider.set("following", data.counts.follows);
