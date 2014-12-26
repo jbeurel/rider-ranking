@@ -3,7 +3,7 @@
   "version": "",
   "dependencies": {
     "bootstrap": "3.2.x",
-    "angular": "1.2.x",
+    "angular": "1.3.x",
     "angular-translate": "2.1.x",
     "angular-translate-loader-static-files": "2.1.x",
     "angular-ui-router": "0.2.x",
@@ -16,5 +16,8 @@
     "angular-numeraljs": "~1.1.6",
     "angulartics": "~0.17.1",
     "angular-sanitize": "~1.3.8"
+  },
+  "resolutions": {
+    "angular": "1.3.x"
   }
 }
