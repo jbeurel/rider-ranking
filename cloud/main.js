@@ -25,8 +25,18 @@ Parse.Cloud.job("ridersUpdate", function (request, status) {
     var query = new Parse.Query("Rider");
     query.each(function (rider) {
         return ig.getUser(rider.get('instagramId')).then(function (riderResponse) {
+
+            // Update Rider information
             updateRiderFields(rider, riderResponse.data.data);
             rider.save();
+
+            // Create new Metric
+            var Metric = Parse.Object.extend("Metric");
+            var metric = new Metric();
+            metric.set("value", rider.get("followers"));
+            metric.set("date", new Date());
+            metric.set("rider", rider);
+            metric.save();
         });
     }).then(function () {
         status.success("Riders Updated!")
