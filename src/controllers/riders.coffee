@@ -1,8 +1,12 @@
-app.controller 'RidersCtrl', ($scope, Rider, Proposal) ->
+app.controller 'RidersCtrl', ($scope, Rider, Proposal, Metric) ->
 
   Rider.getRiders()
   .then (riders) ->
     $scope.riders = riders
+    _.forEach riders, (rider) ->
+      Metric.findByRiderId(rider.objectId)
+      .then (metrics) ->
+        rider.metrics = metrics
 
   $scope.newProposal = new Proposal
 

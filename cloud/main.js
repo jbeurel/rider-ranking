@@ -55,5 +55,4 @@ function updateRiderFields(rider, data) {
     rider.set("website", data.website);
     rider.set("followers", data.counts.followed_by);
     rider.set("following", data.counts.follows);
-    rider.set("data", data);
 }
