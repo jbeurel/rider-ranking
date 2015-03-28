@@ -7,6 +7,7 @@ app.controller 'RidersCtrl', ($scope, Rider, Proposal, Metric) ->
       Metric.findByRiderId(rider.objectId)
       .then (metrics) ->
         rider.metrics = metrics
+        rider.trend = (_.last(metrics).value - _.first(metrics).value) / rider.followers
 
   $scope.newProposal = new Proposal
 
