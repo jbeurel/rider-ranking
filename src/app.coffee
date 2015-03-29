@@ -11,6 +11,7 @@ app = angular.module 'angularParseBoilerplate', [
   'ngNumeraljs'
   'angulartics'
   'angulartics.google.analytics'
+  'daterangepicker'
 ]
 
 app.config (
