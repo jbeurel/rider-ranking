@@ -32,6 +32,9 @@ table.table
         .trend-up(ng-if="rider.trend > 0")
           i.fa.fa-arrow-up
           |  {{ rider.trend | numeraljs:'0.00 %' }}
-        .trend-down(ng-if="rider.trend <= 0")
+        .trend-right(ng-if="rider.trend == 0")
+          i.fa.fa-arrow-right
+          |  {{ rider.trend| numeraljs:'0.00 %' }}
+        .trend-down(ng-if="rider.trend < 0")
           i.fa.fa-arrow-down
           |  {{ rider.trend| numeraljs:'0.00 %' }}
