@@ -4,7 +4,10 @@ concat = require 'gulp-concat'
 
 gulp.task 'vendor', (done) ->
   gulp.src [
+    'bower_components/jquery/dist/jquery.js'
     'bower_components/angular/angular.min.js'
+    'bower_components/moment/moment.js'
+    'bower_components/angular-daterangepicker/js/angular-daterangepicker.js'
     'bower_components/angular-resource/angular-resource.min.js'
     'bower_components/angular-ui-router/release/angular-ui-router.min.js'
     'bower_components/angular-translate/angular-translate.min.js'
@@ -15,7 +18,7 @@ gulp.task 'vendor', (done) ->
     'bower_components/angulartics/src/angulartics.js'
     'bower_components/angulartics/src/angulartics-ga.js'
     'bower_components/angular-sanitize/angular-sanitize.js'
-    'bower_components/moment/moment.js'
+    'bower_components/bootstrap-daterangepicker/daterangepicker.js'
     'bower_components/numeral/numeral.js'
     'bower_components/lodash/dist/lodash.js'
   ]

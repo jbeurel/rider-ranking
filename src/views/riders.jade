@@ -6,6 +6,11 @@
         span.input-group-btn
           button.btn.btn-primary(type="submit") Add rider account !
 
+.input-group
+ span.input-group-addon
+   i.fa.fa-calendar
+ input(date-range-picker class="form-control date-picker" type="text" ng-model="dateRange")
+
 table.table
   thead
     tr
@@ -25,4 +30,14 @@ table.table
         p(ng-bind-html="rider.bio | linky | instagram")
         p
           a(ng-href="{{ rider.website }}") {{ rider.website }}
-      td.bigfont {{ rider.followers | numeraljs:'0,0' }}
+      td
+        .bigfont {{ rider.followers | numeraljs:'0,0' }}
+        .trend-up(ng-if="rider.trend > 0")
+          i.fa.fa-arrow-up
+          |  {{ rider.trend | numeraljs:'0.00 %' }}
+        .trend-right(ng-if="rider.trend == 0")
+          i.fa.fa-arrow-right
+          |  {{ rider.trend| numeraljs:'0.00 %' }}
+        .trend-down(ng-if="rider.trend < 0")
+          i.fa.fa-arrow-down
+          |  {{ rider.trend| numeraljs:'0.00 %' }}
