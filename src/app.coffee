@@ -39,16 +39,16 @@ app.config (
   $urlRouterProvider.otherwise '/riders'
 
   # rider-ranking
-  ParseProvider.initialize(
-    "f30zOn77dmpVbIk0O0mQccHSxGLA499vyIbgkpnq", # Application ID
-    "JoaIvIhGQdvlT9ma5OiRV8GmUQo7BGhXjiC4YrEP"  # REST API Key
-  )
+#  ParseProvider.initialize(
+#    "f30zOn77dmpVbIk0O0mQccHSxGLA499vyIbgkpnq", # Application ID
+#    "JoaIvIhGQdvlT9ma5OiRV8GmUQo7BGhXjiC4YrEP"  # REST API Key
+#  )
 
   # rider-ranking-dev
-#  ParseProvider.initialize(
-#    "3IJVtcL7m5whPkj4Qi9tHTcNlTqDztQRFcKouSkh", # Application ID
-#    "uiwPGvgsodjrUQLbJ9zy7tGIA0E6FI75YTE4Ma7S"  # REST API Key
-#  )
+  ParseProvider.initialize(
+    "3IJVtcL7m5whPkj4Qi9tHTcNlTqDztQRFcKouSkh", # Application ID
+    "uiwPGvgsodjrUQLbJ9zy7tGIA0E6FI75YTE4Ma7S"  # REST API Key
+  )
 
 app.run ($rootScope, $state) ->
   $rootScope.$state = $state
