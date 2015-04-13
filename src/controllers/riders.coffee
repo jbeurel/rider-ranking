@@ -4,7 +4,7 @@ app.controller 'RidersCtrl', ($scope, Rider, Proposal, Metric) ->
     _.forEach riders, (rider) ->
       Metric.findByRiderId(rider.objectId, $scope.dateRange.startDate, $scope.dateRange.endDate)
       .then (metrics) ->
-        rider.metrics = metrics
+        rider.metrics = _.map metrics, (metric) -> return {date: metric.date.iso, value: metric.value}
         rider.trend = (_.last(metrics).value - _.first(metrics).value) / rider.followers
 
   Rider.getRiders()
