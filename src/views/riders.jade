@@ -30,6 +30,7 @@ table.table
         p(ng-bind-html="rider.bio | linky | instagram")
         p
           a(ng-href="{{ rider.website }}") {{ rider.website }}
+        nvd3(options='options' data='rider.metrics')
         pre {{ rider.metrics | json }}
       td
         .bigfont {{ rider.followers | numeraljs:'0,0' }}
