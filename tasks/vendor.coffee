@@ -6,6 +6,8 @@ gulp.task 'vendor', (done) ->
   gulp.src [
     'bower_components/jquery/dist/jquery.js'
     'bower_components/angular/angular.min.js'
+    'bower_components/d3/d3.js'
+    'bower_components/nvd3/nv.d3.js'
     'bower_components/moment/moment.js'
     'bower_components/angular-daterangepicker/js/angular-daterangepicker.js'
     'bower_components/angular-resource/angular-resource.min.js'
@@ -15,6 +17,7 @@ gulp.task 'vendor', (done) ->
     'bower_components/angular-ui-bootstrap-bower/ui-bootstrap-tpls.min.js'
     'bower_components/angular-parse/angular-parse.js'
     'bower_components/angular-numeraljs/dist/angular-numeraljs.js'
+    'bower_components/angular-nvd3/dist/angular-nvd3.js'
     'bower_components/angulartics/src/angulartics.js'
     'bower_components/angulartics/src/angulartics-ga.js'
     'bower_components/angular-sanitize/angular-sanitize.js'

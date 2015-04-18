@@ -1,5 +1,6 @@
 @import "../../bower_components/bootstrap/less/bootstrap.less";
 @import "../../bower_components/components-font-awesome/less/font-awesome.less";
+@import (inline) "../../bower_components/nvd3/nv.d3.css";
 @import (inline) "../../bower_components/bootstrap-daterangepicker/daterangepicker-bs3.css";
 
 .bigfont {
@@ -33,5 +34,18 @@
 
   .navbar-brand, .navbar-brand:hover, .navbar-nav > li > a  {
     color: white;
+  }
+}
+
+.graph-box {
+  position: relative;
+
+  .graph {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
   }
 }
