@@ -1,0 +1,25 @@
+.graph-box.row
+  nvd3.graph.col-xs-12(ng-show="rider.metrics.values.length > 0", options='options', data='[rider.metrics]')
+  .info
+    .col-sm-1
+      .bigfont {{ position }}
+    .col-sm-2
+      img.img-circle.img-responsive(src="{{ rider.profilePicture }}")
+    .col-sm-5
+      p
+        b {{ rider.name }}
+        a(ng-href="http://instagram.com/{{ rider.username }}")  @{{ rider.username }}
+      p(ng-bind-html="rider.bio | linky | instagram")
+      p
+        a(ng-href="{{ rider.website }}") {{ rider.website }}
+    .col-sm-4
+      .bigfont {{ rider.followers | numeraljs:'0,0' }}
+      .trend-up(ng-if="rider.trend > 0")
+        i.fa.fa-arrow-up
+        |  {{ rider.trend | numeraljs:'0.00 %' }}
+      .trend-right(ng-if="rider.trend == 0")
+        i.fa.fa-arrow-right
+        |  {{ rider.trend| numeraljs:'0.00 %' }}
+      .trend-down(ng-if="rider.trend < 0")
+        i.fa.fa-arrow-down
+        |  {{ rider.trend| numeraljs:'0.00 %' }}
