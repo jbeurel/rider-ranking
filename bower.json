@@ -18,7 +18,8 @@
     "angular-sanitize": "~1.3.8",
     "components-font-awesome": "~4.3.0",
     "angular-daterangepicker": "~0.1.12",
-    "angular-nvd3": "0.1.x"
+    "angular-nvd3": "0.1.x",
+    "color-thief": "*"
   },
   "resolutions": {
     "angular": "1.3.x",

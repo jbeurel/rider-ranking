@@ -5,6 +5,11 @@ app.controller 'RidersCtrl', ($scope, Rider, Proposal, Metric) ->
       Metric.findByRiderId(rider.objectId, $scope.dateRange.startDate, $scope.dateRange.endDate)
       .then (metrics) ->
         if metrics.length > 0
+
+          colorThief = new ColorThief()
+          profilePictureColor = colorThief.getColor rider.profilePicture
+          console.log profilePictureColor
+
           rider.metrics =
             key: "followers"
             color: '#689DCA'
