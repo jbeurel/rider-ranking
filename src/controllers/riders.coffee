@@ -9,6 +9,7 @@ app.controller 'RidersCtrl', ($scope, Rider, Proposal, Metric) ->
             key: "followers"
             color: '#689DCA'
             area: true
+            height: 170
             values: _.map metrics, (metric) -> return {date: metric.date.iso, value: metric.value}
           rider.trend = (_.last(metrics).value - _.first(metrics).value) / rider.followers
 

@@ -1,5 +1,5 @@
 .graph-box.row
-  nvd3.graph.col-xs-12(ng-show="rider.metrics.values.length > 0", options='options', data='[rider.metrics]')
+  nvd3.graph.col-xs-12(ng-if="rider.metrics.values.length > 0", options='options', data='[rider.metrics]')
   .info
     .col-sm-1
       .bigfont {{ position }}
