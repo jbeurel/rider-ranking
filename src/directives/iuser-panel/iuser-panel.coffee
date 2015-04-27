@@ -4,6 +4,7 @@ app.directive 'iuserPanel', ->
   scope:
     rider: '='
     position: '='
+    colors: '=?'
   controller: ($scope) ->
     $scope.options =
       chart:

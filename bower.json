@@ -19,7 +19,8 @@
     "components-font-awesome": "~4.3.0",
     "angular-daterangepicker": "~0.1.12",
     "angular-nvd3": "0.1.x",
-    "color-thief": "*"
+    "color-thief": "*",
+    "angular-colorthief": "~0.1.0"
   },
   "resolutions": {
     "angular": "1.3.x",
