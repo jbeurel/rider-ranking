@@ -26,13 +26,12 @@ app.directive 'iuserPanel', ->
             return d3.time.format('%x')(new Date(d))
 
     $scope.$watch 'daterange', ->
-      console.log '$scope.daterange', $scope.daterange
       Metric.findByRiderId($scope.rider.objectId, $scope.daterange.startDate, $scope.daterange.endDate)
       .then (metrics) ->
         if metrics.length > 0
           $scope.rider.metrics =
             key: "followers"
-            color: '#689DCA'
+            color: d3.rgb $scope.colors.dominant[0], $scope.colors.dominant[1], $scope.colors.dominant[2]
             area: true
             height: 170
             values: _.map metrics, (metric) -> return {date: metric.date.iso, value: metric.value}
