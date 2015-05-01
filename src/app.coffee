@@ -13,6 +13,7 @@ app = angular.module 'angularParseBoilerplate', [
   'angulartics.google.analytics'
   'daterangepicker'
   'nvd3'
+  'ngColorThief'
 ]
 
 app.config (

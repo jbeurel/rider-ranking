@@ -4,7 +4,7 @@
     .col-sm-1
       .bigfont {{ position }}
     .col-sm-2
-      img.img-circle.img-responsive(src="{{ rider.profilePicture }}")
+      img.img-circle.img-responsive(ng-src="{{ rider.profilePicture }}" crossOrigin="anonymous" color-thief color-thief-dominant="colors.dominant")
     .col-sm-5
       p
         b {{ rider.name }}

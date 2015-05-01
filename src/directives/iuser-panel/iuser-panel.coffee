@@ -4,7 +4,10 @@ app.directive 'iuserPanel', ->
   scope:
     rider: '='
     position: '='
-  controller: ($scope) ->
+    colors: '=?'
+    daterange: '='
+  controller: ($scope, Metric) ->
+
     $scope.options =
       chart:
         type: 'lineChart'
@@ -21,3 +24,15 @@ app.directive 'iuserPanel', ->
         xAxis:
           tickFormat: (d) ->
             return d3.time.format('%x')(new Date(d))
+
+    $scope.$watch 'daterange', ->
+      Metric.findByRiderId($scope.rider.objectId, $scope.daterange.startDate, $scope.daterange.endDate)
+      .then (metrics) ->
+        if metrics.length > 0
+          $scope.rider.metrics =
+            key: "followers"
+            color: d3.rgb $scope.colors.dominant[0], $scope.colors.dominant[1], $scope.colors.dominant[2]
+            area: true
+            height: 170
+            values: _.map metrics, (metric) -> return {date: metric.date.iso, value: metric.value}
+          $scope.rider.trend = (_.last(metrics).value - _.first(metrics).value) / $scope.rider.followers
