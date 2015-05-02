@@ -10,4 +10,12 @@
   span.input-group-addon
     i.fa.fa-calendar
   input(date-range-picker class="form-control date-picker" type="text" ng-model="dateRange")
-.panel.panel-default(iuser-panel, ng-repeat="rider in riders", rider="rider", position="$index +1")
+
+.panel.panel-default(
+  iuser-panel
+  ng-repeat="rider in riders"
+  rider="rider"
+  position="$index +1"
+  color="rider.metrics.color"
+  daterange="$parent.dateRange"
+)
