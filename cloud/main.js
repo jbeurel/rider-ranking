@@ -1,4 +1,5 @@
 require('cloud/app.js');
+var _ = require('underscore');
 
 var ig = require('cloud/instagram-v1-1.0.js');
 ig.initialize('ca2b7bf5c5b74211883ac9ae0f3d090e');
@@ -23,30 +24,34 @@ Parse.Cloud.beforeSave("Rider", function(request, response) {
 Parse.Cloud.job("ridersUpdate", function (request, status) {
     Parse.Cloud.useMasterKey();
     var query = new Parse.Query("Rider");
-    query.each(function (rider) {
-        return ig.getUser(rider.get('instagramId')).then(function (riderResponse) {
-
-            // Update Rider information
-            updateRiderFields(rider, riderResponse.data.data);
-            rider.save();
-
-            // Create new Metric
-            var Metric = Parse.Object.extend("Metric");
-            var metric = new Metric();
-            metric.set("value", rider.get("followers"));
-            metric.set("date", new Date());
-            metric.set("rider", rider);
-            metric.save();
+    query.limit(1000);
+    query.find().then(function (riders) {
+        _.each(riders, function (rider) {
+            status.message('updating ' + rider.get('username'));
+            ig.getUser(rider.get('instagramId'))
+            .then(function (riderResponse) {
+                // Update Rider information
+                updateRiderFields(rider, riderResponse.data.data);
+                return rider.save();
+            })
+            .then(function (rider) {
+                // Create new Metric
+                var Metric = Parse.Object.extend("Metric");
+                var metric = new Metric();
+                metric.set("value", rider.get("followers"));
+                metric.set("date", new Date());
+                metric.set("rider", rider);
+                return metric.save();
+            });
         });
-    }).then(function () {
-        status.success("Riders Updated!")
+        status.success("Riders Updated!");
     }, function (error) {
-        status.error(error);
+        console.error(error);
+        status.error("Riders Update failed");
     });
 });
 
 function updateRiderFields(rider, data) {
-    console.log('BEFORE ' + rider.get('followers') + ' AFTER ' + data.counts.followed_by);
     rider.set("username", data.username);
     rider.set("instagramId", data.id);
     rider.set("profilePicture", data.profile_picture);
