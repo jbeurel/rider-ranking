@@ -27,6 +27,7 @@ Parse.Cloud.job("ridersUpdate", function (request, status) {
     query.limit(1000);
     query.find().then(function (riders) {
         var length = riders.length;
+        console.log('Updating ' + length + ' riders');
         _.each(riders, function (rider) {
             status.message('updating ' + rider.get('username'));
             ig.getUser(rider.get('instagramId'))
@@ -44,7 +45,6 @@ Parse.Cloud.job("ridersUpdate", function (request, status) {
                 metric.set("rider", rider);
                 metric.save().then(function(){
                     length--;
-                    console.log(length);
                     if (length == 0 ) {
                         status.success("Riders Updated!");
                     }
