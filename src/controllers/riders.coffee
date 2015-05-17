@@ -10,4 +10,4 @@ app.controller 'RidersCtrl', ($scope, Rider, Proposal) ->
     $scope.newProposal.save().then () ->
       $scope.newProposal = new Proposal
 
-  $scope.dateRange = startDate: null, endDate: null
+  $scope.dateRange = startDate: moment().subtract(1, 'month'), endDate: moment()
