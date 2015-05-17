@@ -11,3 +11,6 @@ app.controller 'RidersCtrl', ($scope, Rider, Proposal) ->
       $scope.newProposal = new Proposal
 
   $scope.dateRange = startDate: moment().subtract(1, 'month'), endDate: moment()
+
+  $scope.options =
+    maxDate: moment()
