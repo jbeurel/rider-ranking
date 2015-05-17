@@ -1,15 +1,16 @@
-.row(style="margin-top: 20px")
-  .col-md-6.col-md-offset-3.well
+.row.well(style="margin: 20px 0 20px 0")
+  .col-sm-6
     form(role="form", ng-submit="addProposal()")
       .input-group
         input.form-control(type="text", ng-model="newProposal.username", placeholder="@harrymain" autofocus)
         span.input-group-btn
           button.btn.btn-primary(type="submit") Add rider account !
 
-.input-group
- span.input-group-addon
-   i.fa.fa-calendar
- input(date-range-picker class="form-control date-picker" type="text" ng-model="dateRange" options="options")
+  .col-sm-6
+    .input-group
+      input(date-range-picker class="form-control date-picker" type="text" ng-model="dateRange" options="options")
+      span.input-group-addon
+        i.fa.fa-calendar
 
 .panel.panel-default(
   iuser-panel
